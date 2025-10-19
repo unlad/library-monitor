@@ -8,9 +8,10 @@ export type SelectorProps = {
   selected: string | null
 
   getPorts: () => void
+  selectPort: (path?: string) => void
 }
 
-export function Selector({ ports, selected, getPorts }: SelectorProps) {
+export function Selector({ ports, selected, getPorts, selectPort }: SelectorProps) {
   return <div className="grid grid-cols-[1fr_auto] gap-2 w-full">
     <Select
       className="w-full h-full"
@@ -21,6 +22,7 @@ export function Selector({ ports, selected, getPorts }: SelectorProps) {
       label="Port"
       placeholder="Select a port."
       selectedKeys={selected ? [selected] : undefined}
+      onChange={(e) => selectPort(e.target.value)}
     >
       {(port) => <SelectItem key={port.path} textValue={port.pnpId}>
         <div className="grid grid-cols-[1fr_auto] w-full gap-5">

@@ -54,6 +54,15 @@ export function useInterceptor(host: string,) {
             .then(json => setPorts(json))
     }
 
+    function selectPort(path?: string) {
+        console.log(JSON.stringify({ path }))
+        fetch(`http://${host}/select`, { 
+            method: "POST", 
+            headers: { "Content-type": "application/json"},
+            body: JSON.stringify({ path })
+        })
+    }
+
     useEffect(getPorts, [])
 
     useEffect(() => {
@@ -112,5 +121,5 @@ export function useInterceptor(host: string,) {
         }
     }, [ws])
 
-    return { ports, path, logs, getPorts }
+    return { ports, path, logs, getPorts, selectPort }
 }

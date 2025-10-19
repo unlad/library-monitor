@@ -37,11 +37,11 @@ const columns = [
 ];
 
 export default function IndexPage() {
-  const { ports, path, logs, getPorts } = useInterceptor("127.0.0.1:4567")
+  const { ports, path, logs, getPorts, selectPort } = useInterceptor("127.0.0.1:4567")
 
   return (
     <DefaultLayout>
-      <Selector ports={ports} selected={path} getPorts={getPorts}/>
+      <Selector ports={ports} selected={path} getPorts={getPorts} selectPort={selectPort}/>
       <br /><Divider /><br />
       <RecordList columns={columns} logs={logs}/>
     </DefaultLayout>
