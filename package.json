@@ -1,7 +1,6 @@
 {
-  "name": "vite-template",
-  "private": true,
-  "version": "0.0.0",
+  "name": "library-monitor",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +8,8 @@
     "lint": "eslint --fix",
     "preview": "vite preview"
   },
+  "author": "xi-pec",
+  "license": "MIT",
   "dependencies": {
     "@heroui/button": "2.2.27",
     "@heroui/card": "^2.2.25",
